@@ -6,7 +6,6 @@ Created on Wed Mar 13 19:12:09 2024
 """
 
 import cv2
-import numpy as np
 from matplotlib import pyplot as plt
 
 img = cv2.imread('lambo.jpg',0)
