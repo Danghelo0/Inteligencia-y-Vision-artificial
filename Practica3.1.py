@@ -14,42 +14,42 @@ cv2.imshow("lambo",imagen)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
-# imagen2=np.zeros((m,n))
+imagen2=np.zeros((m,n))
 
 
-# def clasificador (imagen):
-#     m,n,c=imagen.shape
-#     imagen2=np.zeros((m,n))
-#     for x in range(m):
-#         for y in range(n):
-#             if 1<imagen[x,y,0]<30 and imagen[x,y,1]<20 and imagen[x,y,2]<10:
-#                 imagen2[x,y]=255
-#     cv2.imwrite("lambo clasificador.jpg", imagen2)
-#     cv2.imshow("lambo clasificador",imagen2)
+def clasificador (imagen):
+    m,n,c=imagen.shape
+    imagen2=np.zeros((m,n))
+    for x in range(m):
+        for y in range(n):
+            if 1<imagen[x,y,0]<30 and imagen[x,y,1]<20 and imagen[x,y,2]<10:
+                imagen2[x,y]=255
+    cv2.imwrite("lambo clasificador.jpg", imagen2)
+    cv2.imshow("lambo clasificador",imagen2)
 
-# def scalarImagen(imagen):
-#     imagen2=imagen*0.5
-#     cv2.imshow("lambo cromatico",imagen2)
-#     cv2.imwrite("lambo cromatico.jpg", imagen2)
-#     return imagen2
+def scalarImagen(imagen):
+    imagen2=imagen*0.5
+    cv2.imshow("lambo cromatico",imagen2)
+    cv2.imwrite("lambo cromatico.jpg", imagen2)
+    return imagen2
 
-# def cromatica(imagen):
-#     m, n, c = imagen.shape
-#     imagenCrom = np.zeros((m, n, c))
-#     epsilon = 1e-8
-#     for x in range(m):
-#         for y in range(n):
-#             total_intensity = np.sum(imagen[x, y])
-#             imagenCrom[x, y, 0] = imagen[x, y, 0] / (total_intensity + epsilon)
-#             imagenCrom[x, y, 1] = imagen[x, y, 1] / (total_intensity + epsilon)
-#             imagenCrom[x, y, 2] = imagen[x, y, 2] / (total_intensity + epsilon)
-#     return imagenCrom
+def cromatica(imagen):
+    m, n, c = imagen.shape
+    imagenCrom = np.zeros((m, n, c))
+    epsilon = 1e-8
+    for x in range(m):
+        for y in range(n):
+            total_intensity = np.sum(imagen[x, y])
+            imagenCrom[x, y, 0] = imagen[x, y, 0] / (total_intensity + epsilon)
+            imagenCrom[x, y, 1] = imagen[x, y, 1] / (total_intensity + epsilon)
+            imagenCrom[x, y, 2] = imagen[x, y, 2] / (total_intensity + epsilon)
+    return imagenCrom
         
-# imagen=cv2.imread("lambo.jpg")
-# clasificador (scalarImagen(cromatica(imagen)))
-# clasificador(imagen)
-# cv2.waitKey(0)
-# cv2.destroyAllWindows()
+imagen=cv2.imread("lambo.jpg")
+clasificador (scalarImagen(cromatica(imagen)))
+clasificador(imagen)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
 
 
 imagen=cv2.imread("imagen fondo amarillo.jpg")
