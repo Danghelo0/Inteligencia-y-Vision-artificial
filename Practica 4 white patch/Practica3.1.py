@@ -127,3 +127,4 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 image_balanced_8bit = (image_balanced*255).astype(int)
 cv2.imwrite("Imagen azul con white patch.png", image_balanced_8bit)
+#############
