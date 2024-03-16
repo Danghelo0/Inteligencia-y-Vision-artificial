@@ -34,5 +34,5 @@ def Prof(grafoa, nodo_inicial):
     explorar(nodo_inicial, visitados, arbol_expansion)
     return arbol_expansion
 
-arbol_expansion = Prof(grafoa, 'a')
+arbol_expansion = Prof(grafoa, 'a') # nodo principal, cambiar para que cumpla el algoritmo en cualquier nodo
 print("Árbol de expansión por profundidad:", arbol_expansion)
