@@ -20,7 +20,7 @@ grafoa.loc['h', ['f']] = 1
 # grafoa = grafoa.fillna(0)  # Llenar los valores NaN con 0
 # grafoa.to_json("grafoa.json",orient='split')
 
-def dfs(grafoa, nodo_inicial):
+def Prof(grafoa, nodo_inicial):
     visitados = set()
     arbol_expansion = []
 
@@ -34,5 +34,5 @@ def dfs(grafoa, nodo_inicial):
     explorar(nodo_inicial, visitados, arbol_expansion)
     return arbol_expansion
 
-arbol_expansion = dfs(grafoa, 'a')
+arbol_expansion = Prof(grafoa, 'a')
 print("Árbol de expansión por profundidad:", arbol_expansion)
