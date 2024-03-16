@@ -2,7 +2,7 @@
 """
 Created on Mon Mar  4 20:13:57 2024
 
-@author: Usuario
+@author: PC
 """
 
 import pandas as pd
@@ -20,7 +20,7 @@ grafo.loc['g',['a','b','e']]=1
 grafo.loc['h',['f']]=1
 grafo=grafo.fillna(0)#llena nan con 0
 grafo.to_json("grafo.json",orient='split')
-#grafo.to_json("grafo.json") #sale error con esta linea sabe porque
+#grafo.to_json("grafo.json") sale error con esta linea sabe porque
 v1='a' #este nodo se cambia para que de distinta Ep
 
 S=[v1]
