@@ -18,7 +18,7 @@ grafo.loc['e',['c','f','g']]=1
 grafo.loc['f',['d','e','h']]=1 
 grafo.loc['g',['a','b','e']]=1
 grafo.loc['h',['f']]=1
-grafo=grafo.fillna(0)#llena nan con 0
+#grafo=grafo.fillna(0)#llena nan con 0
 grafo.to_json("grafo.json",orient='split')
 #grafo.to_json("grafo.json") sale error con esta linea sabe porque
 v1='a' #este nodo se cambia para que de distinta Ep
@@ -41,3 +41,5 @@ while True:
         break
     S=s.copy()
     s=[]
+    
+print("Árbol de expansión a lo ancho:", Ep)
