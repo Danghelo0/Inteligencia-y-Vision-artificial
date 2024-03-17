@@ -10,14 +10,11 @@ import numpy as np
 
 imagen=cv2.imread("lambo.jpg")
 m,n,c=imagen.shape
-
-
 cv2.imshow("lambo.png",imagen)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
 imagenb=np.zeros((m,n))
-cv2.imwrite("lambob.jpg", imagenb)
 
 for x in range(m):
     for y in range(n):
