@@ -20,6 +20,7 @@ for x in range (m):
         imagenc[x,y,1]=imagen[x,y,1]/(imagen[x,y,0]+imagen[x,y,1]+imagen[x,y,2])
         imagenc[x,y,2]=imagen[x,y,2]/(imagen[x,y,0]+imagen[x,y,1]+imagen[x,y,2])
         
-cv2.imshow("imagen cromatica",imagenc)
+cv2.imshow("lambo cromatico",imagenc)
+cv2.imwrite('lambo cromatico.jpg',imagenc)
 cv2.waitKey()
 cv2.destroyAllWindows()
