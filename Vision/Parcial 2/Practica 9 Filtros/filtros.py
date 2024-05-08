@@ -20,20 +20,20 @@ kernel=np.array([[1,1,1],[1,1,1],[1,1,1]])/9
 imagen_filtrada=cv2.filter2D(imagen, -1, kernel)
 
 def pepper_and_salt(imagen,percentage):
-    num=int(percentage*imagen.shape[0]*imagen.shape[1])# Número de puntos de ruido de sal y pimienta
+    num=int(percentage*imagen.shape[0]*imagen.shape[1])
     np.random.randint(0, imagen.shape[0])
     imagen2=imagen.copy()
     
     for i in range(num):
-        X=np.random.randint(0,imagen2.shape[0]-1)# Un número entero aleatorio desde 0 hasta la longitud de la imagen, porque es un intervalo cerrado, -1
+        X=np.random.randint(0,imagen2.shape[0]-1)
         Y=np.random.randint(0,imagen2.shape[1]-1)
-        if np.random.randint(0,1) == 0: # Probabilidad en blanco y negro 55 abierto
-            imagen2[X,Y] = (255,255,255)#blanco
+        if np.random.randint(0,1) == 0:
+            imagen2[X,Y] = (255,255,255)
         else:
-            imagen2[X,Y] =(0,0,0)#negro
+            imagen2[X,Y] =(0,0,0)
     return imagen2
 
-imagen_sal = pepper_and_salt(imagen,0.04)# 4 por ciento de ruido de sal y pimienta
+imagen_sal = pepper_and_salt(imagen,0.04)
 
 imagen_gaussiana2 = cv2.GaussianBlur(imagen_sal,(5,5),0)
 imagen_mediana2 = cv2.medianBlur(imagen_sal,5)
